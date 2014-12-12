@@ -1,0 +1,92 @@
+﻿using System;
+
+namespace X_ToolZ.WMI_Classes
+{
+    public class MSFT_NetAdapter
+    {
+        public string Caption { get; set; }
+        public string Description { get; set; }
+        public DateTime InstallDate { get; set; }
+        public string Name { get; set; }
+        public string Status { get; set; }
+        public UInt16 Availability { get; set; }
+        public UInt32 ConfigManagerErrorCode { get; set; }
+        public bool ConfigManagerUserConfig { get; set; }
+        public string CreationClassName { get; set; }
+        public string DeviceID { get; set; }
+        public bool ErrorCleared { get; set; }
+        public string ErrorDescription { get; set; }
+        public UInt32 LastErrorCode { get; set; }
+        public string PNPDeviceID { get; set; }
+        public UInt16[] PowerManagementCapabilities { get; set; }
+        public bool PowerManagementSupported { get; set; }
+        public UInt16 StatusInfo { get; set; }
+        public string SystemCreationClassName { get; set; }
+        public string SystemName { get; set; }
+        public UInt64 Speed { get; set; }
+        public UInt64 MaxSpeed { get; set; }
+        public UInt64 RequestedSpeed { get; set; }
+        public UInt16 UsageRestriction { get; set; }
+        public UInt16 PortType { get; set; }
+        public string OtherPortType { get; set; }
+        public string OtherNetworkPortType { get; set; }
+        public UInt16 PortNumber { get; set; }
+        public UInt16 LinkTechnology { get; set; }
+        public string OtherLinkTechnology { get; set; }
+        public string PermanentAddress { get; set; }
+        public string[] NetworkAddresses { get; set; }
+        public bool FullDuplex { get; set; }
+        public bool AutoSense { get; set; }
+        public UInt64 SupportedMaximumTransmissionUnit { get; set; }
+        public UInt64 ActiveMaximumTransmissionUnit { get; set; }
+        public string InterfaceDescription { get; set; }
+        public string InterfaceName { get; set; }
+        public UInt64 NetLuid { get; set; }
+        public string InterfaceGuid { get; set; }
+        public UInt32 InterfaceIndex { get; set; }
+        public string DeviceName { get; set; }
+        public UInt32 NetLuidIndex { get; set; }
+        public bool Virtual { get; set; }
+        public bool Hidden { get; set; }
+        public bool NotUserRemovable { get; set; }
+        public bool IMFilter { get; set; }
+        public UInt32 InterfaceType { get; set; }
+        public bool HardwareInterface { get; set; }
+        public bool WdmInterface { get; set; }
+        public bool EndPointInterface { get; set; }
+        public bool iSCSIInterface { get; set; }
+        public UInt32 State { get; set; }
+        public UInt32 NdisMedium { get; set; }
+        public UInt32 NdisPhysicalMedium { get; set; }
+        public UInt32 InterfaceOperationalStatus { get; set; }
+        public bool OperationalStatusDownDefaultPortNotAuthenticated { get; set; }
+        public bool OperationalStatusDownMediaDisconnected { get; set; }
+        public bool OperationalStatusDownInterfacePaused { get; set; }
+        public bool OperationalStatusDownLowPowerState { get; set; }
+        public UInt32 InterfaceAdminStatus { get; set; }
+        public UInt32 MediaConnectState { get; set; }
+        public UInt32 MtuSize { get; set; }
+        public UInt16 VlanID { get; set; }
+        public UInt64 TransmitLinkSpeed { get; set; }
+        public UInt64 ReceiveLinkSpeed { get; set; }
+        public bool PromiscuousMode { get; set; }
+        public bool DeviceWakeUpEnable { get; set; }
+        public bool ConnectorPresent { get; set; }
+        public UInt32 MediaDuplexState { get; set; }
+        public string DriverDate { get; set; }
+        public UInt64 DriverDateData { get; set; }
+        public string DriverVersionString { get; set; }
+        public string DriverName { get; set; }
+        public string DriverDescription { get; set; }
+        public UInt16 MajorDriverVersion { get; set; }
+        public UInt16 MinorDriverVersion { get; set; }
+        public byte DriverMajorNdisVersion { get; set; }
+        public byte DriverMinorNdisVersion { get; set; }
+        public string PnPDeviceID { get; set; }
+        public string DriverProvider { get; set; }
+        public string ComponentID { get; set; }
+        public UInt32[] LowerLayerInterfaceIndices { get; set; }
+        public UInt32[] HigherLayerInterfaceIndices { get; set; }
+        public bool AdminLocked { get; set; }
+    }
+}

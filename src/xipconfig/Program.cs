@@ -30,7 +30,7 @@ namespace xipconfig
                 if (options.ListAll)
                     manager.Print(manager.OrderBy(x => x.InterfaceType));
                 else
-                    manager.Print(manager.Where(x => x.xMSFTNetAdapter != null).OrderBy(x => x.InterfaceType));
+                    manager.Print(manager.Where(x => x.ConnectionStatus == XNetworkInterface.XConnectionStatus.Connected).OrderBy(x => x.InterfaceType));
                 return;
             }
 

@@ -76,7 +76,8 @@ namespace xipconfig
 
             CopyWMIData("SELECT * FROM Win32_NetworkAdapter", typeof(Win32_NetworkAdapter).FullName, networkAdapters, null);
             CopyWMIData("SELECT * FROM Win32_NetworkAdapterConfiguration", typeof(Win32_NetworkAdapterConfiguration).FullName, networkAdapters, null);
-            CopyWMIData("SELECT * FROM MSFT_NetAdapter", typeof(MSFT_NetAdapter).FullName, networkAdapters, "root\\StandardCimv2");
+            if (Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 2)
+                CopyWMIData("SELECT * FROM MSFT_NetAdapter", typeof (MSFT_NetAdapter).FullName, networkAdapters, "root\\StandardCimv2");
             foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
             {
                 Win32_NetworkAdapter win32NetworkAdapter = (from a in networkAdapters where a.GUID == nic.Id select a).FirstOrDefault();
@@ -84,7 +85,7 @@ namespace xipconfig
                     win32NetworkAdapter.NetworkInterface = nic;
             }
 
-            foreach (Win32_NetworkAdapter nic in networkAdapters.OrderByDescending(x => x.MSFT_NetAdapter != null))
+            foreach (Win32_NetworkAdapter nic in networkAdapters)
                 this.Add(new XNetworkInterface(nic));
 
             int len = Math.Max(this.OrderByDescending(x => x.Name.Length).First().Name.Length, this.OrderByDescending(x => x.DisplayName.Length).First().DisplayName.Length);
@@ -108,7 +109,7 @@ namespace xipconfig
             }
             else
                 searcher = new ManagementObjectSearcher(query);
-
+            
             using (ManagementObjectCollection queryCollection = searcher.Get())
             {
                 foreach (var o in queryCollection)
